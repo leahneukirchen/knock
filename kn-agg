@@ -1,0 +1,10 @@
+#!/bin/sh
+
+awk '
+BEGIN{pass=fail=0}
+/^ok/{pass++}
+/^not ok/{fail++}
+END{print (fail > 0 ? "not ok" : "ok")       \
+          (name ? " - " name : "")           \
+          " - " (pass+fail) " tests, "       \
+          fail " failed (" pass/(pass+fail) * 100 "% succeeded)" }' "name=$1"

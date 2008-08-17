@@ -1,0 +1,8 @@
+#!/bin/sh
+
+source ../knock.sh
+
+ok "yes ok | head -n3 | ../kn-sum | grep -q '3 tests, 0 failed'"
+
+ok "(echo ok; echo not ok; echo ok) | ../kn-sum | grep -q '1 failed'"
+ok "(echo ok; echo not ok; echo ok) | ../kn-sum | grep -q '66.6'"

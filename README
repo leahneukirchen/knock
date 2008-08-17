@@ -1,0 +1,30 @@
+Knock is a simplification of the Test Anything Protocol used by Perl and others.
+
+Every test suite is a script that prints lines looking like:
+
+  ok ...        for a passed test
+  not ok ...    for a failed test
+  # ...         for diagnostics
+
+Everything else is ignored.  Scripts should exit with 0 when they ran
+all tests and non-0 when there was a fatal error.
+
+Included implementations:
+
+  knock.h       (GNU/C99) macros for Knock in C
+  knock.rb      Knock for Ruby
+  knock.sh      Knock for sh and bash
+  knock.zsh     Knock for zsh
+
+Tools included are:
+
+  kn-sum        print a summary of the Knock input given on stdin
+  kn-agg        print a summary of the Knock input, as Knock line
+  kn-nice       reformat Knock to make it easier scannable
+
+For usage, see the test suite "test-all" in test/.
+
+Why "Knock"?  Think "knock on wood... tap tap".  (Thanks to Eric
+Hollensbe for the name idea.)
+
+--Christian Neukirchen, 17aug2008

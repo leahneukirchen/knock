@@ -1,0 +1,20 @@
+#!/bin/sh
+
+source ../knock.sh
+
+echo "# c"
+ok "cc -Wall -Werror -o test-knock test-knock.c"
+ok "test-knock | ../kn-sum | grep -q '14 tests, 7 failed'"
+
+echo "# sh"
+test.sh
+
+echo "# zsh"
+test.zsh
+
+echo "# ruby"
+ok "ruby test-knock.rb | ../kn-sum | grep -q '25 tests, 13 failed'"
+
+echo "# tools"
+test-sum | ../kn-agg sum
+test-agg | ../kn-agg agg

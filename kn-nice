@@ -1,0 +1,6 @@
+#!/usr/bin/sed
+
+s/^#/       #/
+s/^ok *-/ok     -/
+s/^ok *$/ok     -/
+s/^not ok *-/not ok -/
